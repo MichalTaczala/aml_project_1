@@ -1,16 +1,18 @@
-# deep_learning_project_1
+# Advanced_Machine_Learning_project_1
 
+Datasets (small, need 3, max. variables):
+- Heart disease from UCI repository, predicting  fasting blood sugar > 120 mg/dl https://archive.ics.uci.edu/dataset/45/heart+disease
+- 7 variables + target Apple quality https://www.kaggle.com/datasets/nelgiriyewithana/apple-quality
+- Fertility txt file, but well described:  https://archive.ics.uci.edu/dataset/244/fertility
+- ARFF format, 7 variables we might skip this one:  rice classification https://archive.ics.uci.edu/dataset/545/rice+cammeo+and+osmancik
 
-Various links:
-https://keras.io/examples/vision/image_classification_with_vision_transformer/
-
-https://github.com/pinecone-io/examples/blob/master/learn/search/image/image-retrieval-ebook/vision-transformers/vit.ipynb
-
-https://www.youtube.com/watch?v=qU7wO02urYU&ab_channel=JamesBriggs
-
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9227226/
-
-https://www.kaggle.com/code/sadiakhanam7/cinic-10-transformer-background
+Datasets (big, need 6, min. variables):
+- Breast cancer from UCI repository Diagnosis (M(1) = malignant, B(0) = benign) https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic
+- 25 variables, some to binarize, https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction
+- 25 variables,  water-quality https://www.kaggle.com/datasets/mssmartypants/water-quality
+- 12 variables for wine dataset, oklepane ale można złączyć czerwone i białe wina i wtedy miec extra target  https://archive.ics.uci.edu/dataset/186/wine+quality
+- 36 Features, https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success
+- Algerian Forest Fire:  (to be checked)   https://archive.ics.uci.edu/dataset/547/algerian+forest+fires+dataset
 
 
 # VENV ACTIVATION
