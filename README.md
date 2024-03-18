@@ -13,6 +13,7 @@ Datasets (big, need 6, min. variables):
 - 12 variables for wine dataset, oklepane ale można złączyć czerwone i białe wina i wtedy miec extra target  https://archive.ics.uci.edu/dataset/186/wine+quality
 - 36 Features, https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success
 - Algerian Forest Fire:  (to be checked)   https://archive.ics.uci.edu/dataset/547/algerian+forest+fires+dataset
+- 60 features, Mine vs. Rock https://www.openml.org/search?type=data&sort=runs&id=40&status=active
 
 
 # VENV ACTIVATION
