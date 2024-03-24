@@ -5,11 +5,9 @@ import torch
 from wandb.sdk.wandb_config import Config as WandbConfig
 
 
-class CINICDataModule:
+class DataloaderModule:
     train_dataset: TensorDataset
     test_dataset: TensorDataset
-    X: torch.Tensor
-    y: torch.Tensor
 
     def __init__(
             self,
@@ -38,9 +36,6 @@ class CINICDataModule:
         self.train_dataset, self.test_dataset = torch.utils.data.random_split(
             dataset, [train_size, test_size]
         )
-
-    def setup(self, stage=None):
-        pass
 
     def train_dataloader(self):
         train_dataloader = DataLoader(
