@@ -1,4 +1,10 @@
 import torch
+<<<<<<< Updated upstream
+=======
+from .base import Base
+
+
+>>>>>>> Stashed changes
 class IWLS(Base):
     def backprop(self, X: torch.Tensor, y: torch.Tensor, y_hat: torch.Tensor):
         super().backprop(X, y, y_hat)

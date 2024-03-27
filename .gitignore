@@ -165,3 +165,5 @@ src/lightning_logs
 
 # wandb
 wandb
+src/wandb
+src/artifacts

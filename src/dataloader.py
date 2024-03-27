@@ -19,6 +19,7 @@ class DataloaderModule:
         self.logger = logger
         self.config = config
         self.data_name = data_name
+        self.num_features: int | None = None
 
     @property
     def num_workers(self) -> int:
@@ -27,7 +28,8 @@ class DataloaderModule:
     def prepare_data(self):
         data_artifact = self.logger.use_artifact(f"{self.data_name}:latest")
         data_dir = data_artifact.download()
-        X, y = torch.load(os.path.join(data_dir, f"{self.data_name}.pt"))
+        X, y = torch.load(os.path.join(data_dir, f"data.pt"))
+        self.num_features = X.shape[1]
         dataset = TensorDataset(X, y)
 
         dataset_size = len(dataset)
