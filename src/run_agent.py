@@ -29,8 +29,8 @@ def create_interactions(x):
     return torch.cat([x, interactions], dim=1)
 
 
-x = create_interactions(x)
-x_test = create_interactions(x_test)
+# x = create_interactions(x)
+# x_test = create_interactions(x_test)
 
 # Create a DataLoader
 dataset = TensorDataset(x, y)
@@ -40,8 +40,8 @@ test_loader = DataLoader(dataset_test, batch_size=64, shuffle=False)
 
 # Initialize the model
 model = LogisticRegression(num_features=x.shape[1])
-optimizer2 = SGD(model, lr=0.001)
-# optimizer2 = ADAM(model, lr=0.001)
+# optimizer2 = SGD(model, lr=0.001)
+optimizer2 = ADAM(model, lr=0.001)
 
 for i in range(100):
     losses = []

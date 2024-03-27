@@ -9,10 +9,10 @@ class DataloaderModule:
     test_dataset: TensorDataset
 
     def __init__(
-            self,
-            wandb_logger,
-            data_name: str,
-            config: WandbConfig,
+        self,
+        wandb_logger,
+        data_name: str,
+        config: WandbConfig,
     ):
         super().__init__()
         self.logger = wandb_logger
@@ -24,7 +24,7 @@ class DataloaderModule:
         return getattr(self.config, "num_workers", 4)
 
     def prepare_data(self):
-        data_artifact = self.logger.use_artifact(f'{self.data_name}:latest')
+        data_artifact = self.logger.use_artifact(f"{self.data_name}:latest")
         data_dir = data_artifact.download()
         X, y = torch.load(os.path.join(data_dir, f"{self.data_name}.pt"))
         dataset = TensorDataset(X, y)
