@@ -26,8 +26,8 @@ test_loader = DataLoader(dataset_test, batch_size=64, shuffle=False)
 
 # Initialize the model
 model = LogisticRegression(num_features=num_features)
-# optimizer = SGD(model, lr=0.001)
-optimizer2 = ADAM(model, lr=0.001)
+optimizer2 = SGD(model, lr=0.001)
+#optimizer2 = ADAM(model, lr=0.001)
 
 for i in range(100):
     losses = []

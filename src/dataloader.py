@@ -1,6 +1,5 @@
 from torch.utils.data import TensorDataset, DataLoader
 import os
-from lightning.pytorch.loggers import WandbLogger
 import torch
 from wandb.sdk.wandb_config import Config as WandbConfig
 
@@ -11,7 +10,7 @@ class DataloaderModule:
 
     def __init__(
             self,
-            wandb_logger: WandbLogger,
+            wandb_logger,
             data_name: str,
             config: WandbConfig,
     ):

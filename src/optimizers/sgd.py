@@ -1,9 +1,8 @@
 import torch
 
-from .base import Base
+from .base import BaseGrad
 
 
-class SGD(Base):
-    def step(self, grad: torch.Tensor, param=None) -> torch.Tensor:
-        # print("GRAD", grad)
+class SGD(BaseGrad):
+    def step(self, grad: torch.Tensor, _param_name: str) -> torch.Tensor:
         return self.lr * grad
