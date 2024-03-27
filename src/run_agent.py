@@ -2,6 +2,7 @@ import torch
 from torch.utils.data import DataLoader, TensorDataset
 from model import LogisticRegression
 from optimizers.sgd import SGD
+from optimizers.adam import ADAM
 from sklearn.metrics import balanced_accuracy_score
 
 
@@ -13,7 +14,9 @@ x[y == 1] = torch.normal(mean=4, std=1, size=(torch.sum(y == 1), num_features))
 
 y_test = torch.randint(0, 2, (num_samples,))
 x_test = torch.normal(mean=0, std=3, size=(num_samples, num_features))
-x_test[y_test == 1] = torch.normal(mean=4, std=1, size=(torch.sum(y_test == 1), num_features))
+x_test[y_test == 1] = torch.normal(
+    mean=4, std=1, size=(torch.sum(y_test == 1), num_features)
+)
 
 # Create a DataLoader
 dataset = TensorDataset(x, y)
@@ -23,21 +26,23 @@ test_loader = DataLoader(dataset_test, batch_size=64, shuffle=False)
 
 # Initialize the model
 model = LogisticRegression(num_features=num_features)
-optimizer = SGD(model, lr=0.001)
+# optimizer = SGD(model, lr=0.001)
+optimizer2 = ADAM(model, lr=0.001)
 
 for i in range(100):
     losses = []
     for x, y in train_loader:
         y_hat = model.forward(x)
-        #print(y_hat, y)
+        # print(y_hat, y)
         loss = model.loss(y_hat, y)
-        #print(loss)
-        optimizer.backprop(x, y, y_hat)
+        # print(loss)
+        optimizer2.backprop(x, y, y_hat)
+        # optimizer.backprop(x, y, y_hat)
         losses.append(loss)
-        #break
+        # break
 
-    #print(torch.mean(torch.tensor(losses)))
-    #print(model.beta1)
+    # print(torch.mean(torch.tensor(losses)))
+    # print(model.beta1)
 
 acc = []
 for x, y in test_loader:
