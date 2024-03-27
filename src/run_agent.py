@@ -39,7 +39,7 @@ dataset_test = TensorDataset(x_test, y_test)
 test_loader = DataLoader(dataset_test, batch_size=64, shuffle=False)
 
 # Initialize the model
-model = LogisticRegression(num_features=num_features)
+model = LogisticRegression(num_features=x.shape[1])
 optimizer2 = SGD(model, lr=0.001)
 # optimizer2 = ADAM(model, lr=0.001)
 
