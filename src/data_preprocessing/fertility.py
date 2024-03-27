@@ -24,6 +24,6 @@ class Fertility(PreprocessData):
 
 
 if __name__ == "__main__":
-    apple_quality = Fertility("data")
-    apple_quality.load_and_transform()
-    apple_quality.upload_data()
+    fertility = Fertility("data")
+    fertility.load_and_transform()
+    fertility.upload_data()
