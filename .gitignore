@@ -161,3 +161,7 @@ data/
 src/lightning_logs
 
 !/**/.gitkeep
+
+
+# wandb
+wandb
