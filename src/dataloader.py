@@ -2,6 +2,7 @@ from torch.utils.data import TensorDataset, DataLoader
 import os
 import torch
 from wandb.sdk.wandb_config import Config as WandbConfig
+import wandb
 
 
 class DataloaderModule:
@@ -10,12 +11,12 @@ class DataloaderModule:
 
     def __init__(
         self,
-        wandb_logger,
+        logger: wandb.sdk.wandb_run.Run,
         data_name: str,
         config: WandbConfig,
     ):
         super().__init__()
-        self.logger = wandb_logger
+        self.logger = logger
         self.config = config
         self.data_name = data_name
 
